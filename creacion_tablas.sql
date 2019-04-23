@@ -20,7 +20,7 @@ CREATE TABLE libros (
   titulo          	VARCHAR(500) not NULL,
   descripcion	  	VARCHAR(1000),
   nombre_autor	  	VARCHAR(500),
-  fecha_publicacion DATE,
+  fecha_publicacion VARCHAR(30),
   fecha_registro 	DATE DEFAULT CURRENT_DATE,
   codigo_categoria  INT,
   nid_editorial     VARCHAR(50),

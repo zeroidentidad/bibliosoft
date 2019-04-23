@@ -71,6 +71,31 @@ public class CategoriaDAO {
 			return null;
 		}
 		
+	}
+	
+	public static String getCategoria(int codigo) throws IOException {
+		
+		try {
+		
+		String SQL = "SELECT nombre FROM categorias WHERE codigo=?";
+		Connection con = ConexionDB.conectar();
+		PreparedStatement st = con.prepareStatement(SQL);
+		st.setInt(1, codigo);
+		ResultSet rt = st.executeQuery();
+		
+		/*Statement st = con.createStatement();
+		ResultSet rt = st.executeQuery("SELECT nombre FROM categorias WHERE codigo=?");*/
+		
+		if (rt.next()) {
+			return rt.getString("nombre");
+		}
+		
+		return "- Sin editorial -";
+		
+		} catch (SQLException e) {
+			return "- SQLException -";
+		}
+		
 	}	
 
 }

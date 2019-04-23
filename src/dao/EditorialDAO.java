@@ -80,4 +80,29 @@ public class EditorialDAO {
 		
 	}	
 	
+	public static String getEditorial(String nid) throws IOException {
+		
+		try {
+		
+		String SQL = "SELECT nombre FROM editoriales WHERE nid=?";
+		Connection con = ConexionDB.conectar();
+		PreparedStatement st = con.prepareStatement(SQL);
+		st.setString(1, nid);
+		ResultSet rt = st.executeQuery();
+		
+		/*Statement st = con.createStatement();
+		ResultSet rt = st.executeQuery("SELECT nombre FROM editoriales WHERE nid=?");*/
+		
+		if (rt.next()) {
+			return rt.getString("nombre");
+		}
+		
+		return "- Sin editorial -";
+		
+		} catch (SQLException e) {
+			return "- SQLException -";
+		}
+		
+	}	
+		
 }

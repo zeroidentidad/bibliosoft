@@ -42,15 +42,15 @@ public class EditorialControl extends HttpServlet {
 		String direccion=request.getParameter("direccion");
 		String email=request.getParameter("email");
 		String sitioweb=request.getParameter("sitioweb");
-		Editorial c= new Editorial();
-		c.setNid(nid);
-		c.setNombre(nombre);
-		c.setTelefono(telefono);
-		c.setDireccion(direccion);
-		c.setEmail(email);
-		c.setSitioweb(sitioweb);
+		Editorial e= new Editorial();
+		e.setNid(nid);
+		e.setNombre(nombre);
+		e.setTelefono(telefono);
+		e.setDireccion(direccion);
+		e.setEmail(email);
+		e.setSitioweb(sitioweb);
 		
-		if (EditorialDAO.registrar(c)) {
+		if (EditorialDAO.registrar(e)) {
 			request.setAttribute("mensaje","La editorial fue guardada.");
 		}else {
 			request.setAttribute("mensaje","La editorial NO fue guardada.");

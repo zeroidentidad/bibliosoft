@@ -8,7 +8,7 @@
 		<meta charset="utf-8" />
 		<title>Gestión de editorial</title>
 
-		<meta name="description" content="Christian Gámez Udemy" />
+		<meta name="description" content="Zero" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<%@include file="css.jsp" %>
@@ -296,10 +296,10 @@
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="assets/images/avatars/user.jpeg" alt="Zero Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									Zero
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -560,7 +560,7 @@
 												ISBN:
 												</label>
 												<div class="col-sm-9">
-													<input type="text" name="isbn" value="" placeholder="ISBN del libro"/>
+													<input type="text" name="isbn" value="" placeholder="ISBN libro"/>
 												</div>
 											</div>
 											<div class="form-group">
@@ -568,7 +568,7 @@
 												Titulo:
 												</label>
 												<div class="col-sm-9">
-													<input type="text" name="titulo" value="" placeholder="Titulo del libro"/>
+													<input type="text" name="titulo" value="" placeholder="Titulo libro"/>
 												</div>
 											</div>
 											<div class="form-group">
@@ -576,7 +576,7 @@
 												Descripcion:
 												</label>
 												<div class="col-sm-9">
-													<input type="text" name="descripcion" placeholder="Resumen del libro"/>
+													<input type="text" name="descripcion" placeholder="Resumen libro"/>
 												</div>
 											</div>
 											<div class="form-group">
@@ -584,7 +584,7 @@
 												Autor:
 												</label>
 												<div class="col-sm-9">
-													<input type="text" name="nombre_autor" value="" placeholder="Nombre del autor del libro"/>
+													<input type="text" name="nombre_autor" value="" placeholder="Nombre autor del libro"/>
 												</div>
 											</div>
 											<div class="form-group">
@@ -592,7 +592,7 @@
 												Fecha de publicacion:
 												</label>
 												<div class="col-sm-9">
-													<input type="text" name="fecha_publicacion" value="" placeholder="2018-01-13"/>
+													<input type="text" name="fecha_publicacion" value="" placeholder="2019-01-13"/>
 												</div>
 											</div>
 											<div class="form-group">
@@ -601,7 +601,7 @@
 												</label>
 												<div class="col-sm-9">
 													<select name="cod_categoria">
-														<option value="0">Seleccione una categoria</option>
+														<option value="0">Seleccione categoria</option>
 														<% for(Categoria c:CategoriaDAO.listar()) { %>
 														<option value="<%=c.getCodigo()%>"><%=c.getNombre()%></option>
 														<%}%>
@@ -614,7 +614,7 @@
 												</label>
 												<div class="col-sm-9">
 													<select name="nid_editorial">
-														<option value="0">Seleccione una editorial</option>
+														<option value="0">Seleccione editorial</option>
 														<% for(Editorial e:EditorialDAO.listar()) { %>
 														<option value="<%=e.getNid()%>"><%=e.getNombre()%></option>
 														<%}%>
@@ -654,7 +654,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							Jesus Ferrer &copy; 1992
+							Zero &copy; 2018
 						</span>
 
 						&nbsp; &nbsp;

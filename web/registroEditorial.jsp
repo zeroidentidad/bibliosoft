@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<title>Gestión de editorial</title>
 
-		<meta name="description" content="Christian Gámez Udemy" />
+		<meta name="description" content="Zero" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<%@include file="css.jsp" %>
@@ -294,10 +294,10 @@
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="assets/images/avatars/user.jpeg" alt="Zero Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									Zero
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -626,7 +626,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							Christian Gámez &copy; 2017-2018
+							Zero &copy; 2018
 						</span>
 
 						&nbsp; &nbsp;

@@ -6,8 +6,12 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ConexionDB {
+	
+	private static final Logger LOG = Logger.getLogger(ConexionDB.class.getName());
 	
 	public static Connection conectar() throws IOException{
 		
@@ -22,16 +26,14 @@ public class ConexionDB {
         String puerto= (String) p.get ("puerto");
         String namedb= (String) p.get ("namedb");
 		
-			try {
-			Class.forName("org.postgresql.Driver");
-			return DriverManager.getConnection("jdbc:postgresql://"+iphost+":"+puerto+"/"+namedb+"",usuario,contrasena); 
-			} catch (ClassNotFoundException e) {
-			return null;			
-			} catch (SQLException e) {
-			return null;
-			}	
-		
-		
+        Connection conexion = null;
+		try {
+		    DriverManager.registerDriver(new org.postgresql.Driver());
+		    conexion = DriverManager.getConnection("jdbc:postgresql://"+iphost+":"+puerto+"/"+namedb+"",usuario,contrasena); 
+		} catch (SQLException e) {
+				LOG.log(Level.SEVERE, "Ocurrió un error en: {0}", e.getMessage());			
+		}
+		return conexion;
 	}
        
 }

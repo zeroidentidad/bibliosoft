@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.*" %>
+<%@page import="dao.*" %>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -6,7 +8,7 @@
 		<meta charset="utf-8" />
 		<title>Gestión de libros</title>
 
-		<meta name="description" content="Christian Gámez Udemy" />
+		<meta name="description" content="Zero" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<%@include file="css.jsp" %>
@@ -14,7 +16,7 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default          ace-save-state">
+		<div id="navbar" class="navbar navbar-default ace-save-state">
 			<div class="navbar-container ace-save-state" id="navbar-container">
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
 					<span class="sr-only">Toggle sidebar</span>
@@ -294,10 +296,10 @@
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="assets/images/avatars/user.jpeg" alt="Zero Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									Zero
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -574,41 +576,32 @@
 												</thead>
 
 												<tbody>
+													<% for(Libro l:LibroDAO.listar()) { %>													
 													<tr>
 
-														<td>
-														<a href="#">1254-3256-9856-652</a>
-														</td>
-														<td class="hidden-480">Introducción a desarrollo web con JSP</td>
-														<td>Christian Gámez</td>
-
-														<td>2017-12-31</td>
-                                                                                                                <td><span class="label label-sm label-success">Planeta</span></td>
-                                                                                                                <td>
-															<span class="label label-sm label-success">Matemáticas</span>
-														</td>
-
-														<td>
+														<td><a href="#"><%= l.getIsbn() %></a></td>
+														<td class="hidden-480"><%= l.getTitulo() %></td>
+														<td><%= l.getNombre_autor() %></td>
+														<td><%= l.getFecha_publicacion() %></td>
+                                                        <td><span class="label label-sm label-success"><%= EditorialDAO.getEditorial(l.getNid_editorial()) %></span></td>
+                                                        <td><span class="label label-sm label-success"><%= CategoriaDAO.getCategoria(l.getCodigo_categoria()) %></span></td>
+														<!--<td>
 															<div class="hidden-sm hidden-xs action-buttons">
 																<a class="blue" href="#">
 																	<i class="ace-icon fa fa-search-plus bigger-130"></i>
 																</a>
-
 																<a class="green" href="#">
 																	<i class="ace-icon fa fa-pencil bigger-130"></i>
 																</a>
-
 																<a class="red" href="#">
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>
-
 															<div class="hidden-md hidden-lg">
 																<div class="inline pos-rel">
 																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
 																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
 																	</button>
-
 																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																		<li>
 																			<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
@@ -617,7 +610,6 @@
 																				</span>
 																			</a>
 																		</li>
-
 																		<li>
 																			<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
 																				<span class="green">
@@ -625,7 +617,6 @@
 																				</span>
 																			</a>
 																		</li>
-
 																		<li>
 																			<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
 																				<span class="red">
@@ -636,9 +627,9 @@
 																	</ul>
 																</div>
 															</div>
-														</td>
+														</td> -->
 													</tr>
-
+													<%}%>
 													
 													</tbody>
 												</table>
@@ -691,7 +682,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							Christian Gámez &copy; 2017-2018
+							Zero &copy; 2018
 						</span>
 
 						&nbsp; &nbsp;
